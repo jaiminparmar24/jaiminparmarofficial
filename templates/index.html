@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Generator</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif; background:#f4f6f8; color:#111; padding:24px}
+    .box{max-width:680px;margin:20px auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    input[type="text"]{width:100%;padding:10px;border-radius:6px;border:1px solid #ddd}
+    label{display:block;margin-top:10px;font-size:14px;color:#444}
+    .row{display:flex;gap:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:6px;background:#0ea5a4;color:white;border:none;cursor:pointer;margin-top:12px}
+    .small{width:120px}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Generate QR from any URL</h2>
+    <form method="POST">
+      <label>Enter URL (you can paste any link)
+        <input type="text" name="url" placeholder="https://example.com or example.com" required>
+      </label>
+
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+        <label style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:13px">Foreground</span>
+          <input type="color" name="fg_color" value="#000000" style="margin-left:6px">
+        </label>
+
+        <label style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:13px">Background</span>
+          <input type="color" name="bg_color" value="#ffffff" style="margin-left:6px">
+        </label>
+
+        <label style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:13px">Size</span>
+          <input class="small" type="number" name="size" value="10" min="2" max="40">
+        </label>
+
+        <label style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:13px">Border</span>
+          <input class="small" type="number" name="border" value="4" min="0" max="10">
+        </label>
+      </div>
+
+      <button class="btn" type="submit">Generate QR</button>
+    </form>
+  </div>
+</body>
+</html>
